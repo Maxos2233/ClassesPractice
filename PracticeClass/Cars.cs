@@ -13,20 +13,27 @@ namespace PracticeClass
         public int Milage;
         public int NumberOfDoors;
         public int NumberOfWheels;
-        public string EngineOfCar;
+        public Engine EngineOfCar;
 
-        public Car(string brand, int milage, int numberOfDoors, int numberOfWheels, Engine engineOfCar) 
+
+        public Car(string brand, int milage, int numberOfDoors, int numberOfWheels, Engine engine) 
         {
             Brand = brand;
             Milage = milage;
             NumberOfDoors = numberOfDoors;
             NumberOfWheels = numberOfWheels;
-            EngineOfCar = engineOfCar.GetInfoOfEngine();
+            EngineOfCar = engine;
+        }
+
+        public string GetInfoOfEngine()
+        {
+            return $"Serial number of engine is {EngineOfCar.SerialNumber}, age of engine is {EngineOfCar.AgeOfEngine} and coefficient of reliability is {EngineOfCar.Reliability}";
         }
 
         public string GetInfoOfCar()
         {
-            return $"Brand of car is {Brand}, mileage of car is {Milage}, number of doors is {NumberOfDoors} and number of wheels is {NumberOfWheels}\n{EngineOfCar}";
+            return $"Brand of car is {Brand}, mileage of car is {Milage}, number of doors is {NumberOfDoors} and number of wheels is {NumberOfWheels}";
         }
+        
     }
 }

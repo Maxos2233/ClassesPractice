@@ -19,10 +19,5 @@ namespace PracticeClass
             Reliability = reliability;
         }
 
-
-        public string GetInfoOfEngine()
-        {
-            return $"Serial number of engine is {SerialNumber}, age of engine is {AgeOfEngine} and coefficient of reliability is {Reliability}";
-        }
     }
 }
