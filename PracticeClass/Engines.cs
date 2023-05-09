@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace PracticeClass
 {
-    public class Engines
+    public class Engine
     {
-        public int _serialNumber { get; private set; }
-        public int _ageOfEngine { get; private set; }
-        public int _reliability { get; private set; }
+        public int SerialNumber { get; private set; }
+        public int AgeOfEngine { get; private set; }
+        public int Reliability { get; private set; }
 
-        public Engines(int serialNumber, int ageOfEngine, int reliability)
+        public Engine(int serialNumber, int ageOfEngine, int reliability)
         {
-            _serialNumber = serialNumber;
-            _ageOfEngine = ageOfEngine;
-            _reliability = reliability;
+            SerialNumber = serialNumber;
+            AgeOfEngine = ageOfEngine;
+            Reliability = reliability;
         }
+
 
         public string GetInfoOfEngine()
         {
-            return $"Serial number of engine is {_serialNumber}, age of engine is {_ageOfEngine} and coefficient of reliability is {_reliability}";
+            return $"Serial number of engine is {SerialNumber}, age of engine is {AgeOfEngine} and coefficient of reliability is {Reliability}";
         }
     }
 }
