@@ -9,11 +9,10 @@ double reliabilityOfCar()
     return engine._reliability * car.Milage / 1000;
 }
 
-string n = car.GetInfoOfCar();
-string m = engine.GetInfoOfEngine();
+
 string z = Convert.ToString(reliabilityOfCar());
 
 
-Console.WriteLine(n);
-Console.WriteLine(m);
+Console.WriteLine(car.GetInfoOfCar());
+Console.WriteLine(engine.GetInfoOfEngine());
 Console.WriteLine(z);
