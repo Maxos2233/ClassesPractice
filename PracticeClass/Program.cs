@@ -1,17 +1,12 @@
 ﻿using System.Numerics;
+using System.Reflection;
 using PracticeClass;
 
-Engine engine = new Engine(73428565, 3, 7);
+var engine = new Engine(732452, 6, 7);
 Car car = new Car("BMW", 130000, 4, 4, engine);
 
 
-double reliabilityOfCar()
-{
-    return engine.Reliability * car.Milage / 1000;
-}
-
-
-string z = Convert.ToString(reliabilityOfCar());
+string z = Convert.ToString(car.reliabilityOfCar());
 
 
 Console.WriteLine(car.GetInfoOfCar());
