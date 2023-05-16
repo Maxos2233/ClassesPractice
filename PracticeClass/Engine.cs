@@ -31,5 +31,6 @@ namespace PracticeClass
         {
             get { return SerialNumber; }
         }
+
     }
 }

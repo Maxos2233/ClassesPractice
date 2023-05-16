@@ -25,6 +25,8 @@ namespace PracticeClass
             EngineOfCar = engine;
         }
 
+
+
         public string GetInfoOfEngine()
         {
             return $"Serial number of engine is {EngineOfCar.GetSerialNumber}, age of engine is {EngineOfCar.GetAgeOfEngine} and coefficient of reliability is {EngineOfCar.GetReliability}";
@@ -39,6 +41,7 @@ namespace PracticeClass
         {
             return EngineOfCar.GetReliability * Milage / 1000;
         }
+
 
     }
 }
