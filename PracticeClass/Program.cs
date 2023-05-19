@@ -33,14 +33,8 @@ List<Car> listOfCars = new List<Car>()
     new Car("Volkswagen", 250000, 4, 4, listOfEngines[9])
 };
 
-double mostReliable = listOfCars[0].reliabilityOfCar();
-double leastReliable = listOfCars[0].reliabilityOfCar();
-int amountOfCharacters = listOfCars[0].Brand.Length;
-int indexOfCar = 0;
-var mostMileage = listOfCars[0].Milage;
-var numberOfWheels = listOfCars[0].NumberOfWheels;
-var numberOfDoors = listOfCars[0].NumberOfDoors;
-var taskSolver = new TaskSolver(mostReliable, leastReliable, listOfCars, amountOfCharacters, indexOfCar, mostMileage, numberOfWheels, numberOfDoors);
+
+var taskSolver = new TaskSolver(listOfCars);
 
 
 for (int i = 0; i < listOfCars.Count; i++)
