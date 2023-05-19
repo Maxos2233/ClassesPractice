@@ -33,7 +33,14 @@ List<Car> listOfCars = new List<Car>()
     new Car("Volkswagen", 250000, 4, 4, listOfEngines[9])
 };
 
-
+double mostReliable = listOfCars[0].reliabilityOfCar();
+double leastReliable = listOfCars[0].reliabilityOfCar();
+int amountOfCharacters = listOfCars[0].Brand.Length;
+int indexOfCar = 0;
+var mostMileage = listOfCars[0].Milage;
+var numberOfWheels = listOfCars[0].NumberOfWheels;
+var numberOfDoors = listOfCars[0].NumberOfDoors;
+var taskSolver = new TaskSolver(mostReliable, leastReliable, listOfCars, amountOfCharacters, indexOfCar, mostMileage, numberOfWheels, numberOfDoors);
 
 
 for (int i = 0; i < listOfCars.Count; i++)
@@ -46,89 +53,13 @@ for (int z = 0; z <  listOfEngines.Count; z++)
     Console.WriteLine(listOfCars[z].GetInfoOfEngine());
 }
 
-double mostReliable = listOfCars[0].reliabilityOfCar();
-double leastReliable = listOfCars[0].reliabilityOfCar();
-
-for (int i = 1; i < listOfCars.Count; i++)
+for (int i = 0;i < listOfCars.Count; i++)
 {
     Console.WriteLine(listOfCars[i].reliabilityOfCar());
-    var number = listOfCars[i].reliabilityOfCar();
-    for (int j = 0; j < listOfCars.Count; j++)
-    {
-        var number2 = listOfCars[j].reliabilityOfCar();
-        if (number < number2 && mostReliable > number)
-        {
-            mostReliable = number;
-        }
-        else if (number2 < number && mostReliable > number2)
-        {
-            mostReliable = number2;
-        }
-    }
 }
-
-for (int i = 1; i < listOfCars.Count; i++)
-{
-    Console.WriteLine(listOfCars[i].reliabilityOfCar());
-    var number = listOfCars[i].reliabilityOfCar();
-    for (int j = 0; j < listOfCars.Count; j++)
-    {
-        var number2 = listOfCars[j].reliabilityOfCar();
-        if (number > number2 && leastReliable < number)
-        {
-            leastReliable = number;
-        }
-        else if (number2 > number && leastReliable < number2)
-        {
-            leastReliable = number2;
-        }
-    }
-}
-
-var amountOfCharacters = listOfCars[0].Brand.Length;
-var indexOfCar = 0;
-for (int i = 1; i < listOfCars.Count;i++)
-{
-    if (amountOfCharacters < listOfCars[i].Brand.Length)
-    {
-        amountOfCharacters = listOfCars[i].Brand.Length;
-        indexOfCar = i;
-    }
-}
-
-
-var mostMileage = listOfCars[0].Milage;
-for (int i = 1; i < listOfCars.Count; i++)
-{
-    Console.WriteLine(listOfCars[i].Milage);
-    var number = listOfCars[i].Milage;
-    for (int j = 0; j < listOfCars.Count; j++)
-    {
-        var number2 = listOfCars[j].Milage;
-        if (number > number2 && mostMileage < number)
-        {
-            mostMileage = number;
-        }
-        else if (number2 > number && mostMileage < number2)
-        {
-            mostMileage = number2;
-        }
-    }
-}
-
-var numberOfWheels = listOfCars[0].NumberOfWheels;
-var numberOfDoors = listOfCars[0].NumberOfDoors;
-for (int i = 1; i < listOfCars.Count; i++)
-{
-    numberOfWheels += listOfCars[i].NumberOfWheels;
-    numberOfDoors += listOfCars[i].NumberOfDoors;
-}
-
-
-Console.WriteLine(mostReliable);
-Console.WriteLine(leastReliable);
-Console.WriteLine(listOfCars[indexOfCar].Brand);
-Console.WriteLine(mostMileage);
-Console.WriteLine(numberOfDoors);
-Console.WriteLine(numberOfWheels);
-
+Console.WriteLine(taskSolver.GetMostReliableCar());
+Console.WriteLine(taskSolver.GetLeastReliableCar());
+Console.WriteLine(taskSolver.GetLongestBrandName());
+Console.WriteLine(taskSolver.GetMostMileage());
+Console.WriteLine(taskSolver.GetSummOfWheels());
+Console.WriteLine(taskSolver.GetSummOfDoors());
