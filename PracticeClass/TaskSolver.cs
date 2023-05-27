@@ -11,27 +11,25 @@ namespace PracticeClass
         
         public List<Car> Cars { get; private set; }
 
+
         public TaskSolver(List<Car> listOfCars)
         {
             Cars = listOfCars;
         }
 
+
         public double GetMostReliableCar()
         {
             var mostReliable = Cars[0].reliabilityOfCar();
-            var number = Cars[0].reliabilityOfCar();
-            var number2 = Cars[0].reliabilityOfCar();
             for (int i = 1; i < Cars.Count; i++)
             {
-                number = Cars[i].reliabilityOfCar();
-                number2 = Cars[i - 1].reliabilityOfCar();
-                if (mostReliable > number)
+                if (mostReliable > Cars[i].reliabilityOfCar())
                 {
-                    mostReliable = number;
+                    mostReliable = Cars[i].reliabilityOfCar();
                 }
-                else if (mostReliable > number2)
+                else if (mostReliable > Cars[i - 1].reliabilityOfCar())
                 {
-                    mostReliable = number2;
+                    mostReliable = Cars[i - 1].reliabilityOfCar();
                 }
                 
             }
@@ -41,19 +39,15 @@ namespace PracticeClass
         public double GetLeastReliableCar()
         {
             var leastReliable = Cars[0].reliabilityOfCar();
-            var number = Cars[0].reliabilityOfCar();
-            var number2 = Cars[0].reliabilityOfCar();
             for (int i = 1; i < Cars.Count; i++)
             {
-                number = Cars[i].reliabilityOfCar();
-                number2 = Cars[i - 1].reliabilityOfCar();
-                if (leastReliable < number)
+                if (leastReliable < Cars[i].reliabilityOfCar())
                 {
-                    leastReliable = number;
+                    leastReliable = Cars[i].reliabilityOfCar();
                 }
-                else if (leastReliable < number2)
+                else if (leastReliable < Cars[i - 1].reliabilityOfCar())
                 {
-                    leastReliable = number2;
+                    leastReliable = Cars[i - 1].reliabilityOfCar();
                 }
                 
             }
@@ -63,7 +57,7 @@ namespace PracticeClass
         {
             var amountOfCharactersOfName = Cars[0].Brand.Length;
             var indexOfName = 0;
-            for (int i = 1; i<Cars.Count;i++)
+            for (int i = 1; i < Cars.Count; i++)
             {
                 if (amountOfCharactersOfName < Cars[i].Brand.Length)
                 {
@@ -77,19 +71,15 @@ namespace PracticeClass
         public int GetMostMileage()
         {
             var mostMileage = Cars[0].Milage;
-            var number = Cars[0].Milage;
-            var number2 = Cars[0].Milage;
             for (int i = 1; i < Cars.Count; i++)
             {
-                number = Cars[i].Milage;
-                number2 = Cars[i - 1].Milage;
-                if (mostMileage < number)
+                if (mostMileage < Cars[i].Milage)
                 {
-                    mostMileage = number;
+                    mostMileage = Cars[i].Milage;
                 }
-                else if (mostMileage < number2)
+                else if (mostMileage < Cars[i - 1].Milage)
                 {
-                    mostMileage = number2;
+                    mostMileage = Cars[i - 1].Milage;
                 }
 
             }
@@ -112,6 +102,11 @@ namespace PracticeClass
                 amountOfDoors += Cars[i].NumberOfDoors;
             }
             return amountOfDoors;
+        }
+
+        public string PrintSolution()
+        {
+            return $"Most reliability of car is {GetMostReliableCar()}, least reliability of car is {GetLeastReliableCar()}, longest name of car brand is {GetLongestBrandName()}, most mileage is {GetMostMileage()}, summ of wheels is {GetSummOfWheels()} and summ of doors is {GetSummOfDoors()}";
         }
     }
 }

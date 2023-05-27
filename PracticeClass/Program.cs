@@ -47,13 +47,8 @@ for (int z = 0; z <  listOfEngines.Count; z++)
     Console.WriteLine(listOfCars[z].GetInfoOfEngine());
 }
 
-for (int i = 0;i < listOfCars.Count; i++)
+for (int i = 0; i < listOfCars.Count; i++)
 {
     Console.WriteLine(listOfCars[i].reliabilityOfCar());
 }
-Console.WriteLine(taskSolver.GetMostReliableCar());
-Console.WriteLine(taskSolver.GetLeastReliableCar());
-Console.WriteLine(taskSolver.GetLongestBrandName());
-Console.WriteLine(taskSolver.GetMostMileage());
-Console.WriteLine(taskSolver.GetSummOfWheels());
-Console.WriteLine(taskSolver.GetSummOfDoors());
+Console.WriteLine(taskSolver.PrintSolution());
