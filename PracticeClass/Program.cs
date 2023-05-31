@@ -51,4 +51,4 @@ for (int i = 0; i < listOfCars.Count; i++)
 {
     Console.WriteLine(listOfCars[i].reliabilityOfCar());
 }
-Console.WriteLine(taskSolver.PrintSolution());
+Console.WriteLine(taskSolver.GetSolution());

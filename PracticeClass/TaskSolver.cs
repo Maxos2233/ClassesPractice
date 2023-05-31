@@ -53,6 +53,7 @@ namespace PracticeClass
             }
             return leastReliable;
         }
+
         public string GetLongestBrandName()
         {
             var amountOfCharactersOfName = Cars[0].Brand.Length;
@@ -85,6 +86,7 @@ namespace PracticeClass
             }
             return mostMileage;
         }
+
         public int GetSummOfWheels()
         {
             var amountOfWheels = Cars[0].NumberOfWheels;
@@ -94,6 +96,7 @@ namespace PracticeClass
             }
             return amountOfWheels;
         }
+
         public int GetSummOfDoors()
         {
             var amountOfDoors = Cars[0].NumberOfDoors;
@@ -104,7 +107,7 @@ namespace PracticeClass
             return amountOfDoors;
         }
 
-        public string PrintSolution()
+        public string GetSolution()
         {
             return $"Most reliability of car is {GetMostReliableCar()}, least reliability of car is {GetLeastReliableCar()}, longest name of car brand is {GetLongestBrandName()}, most mileage is {GetMostMileage()}, summ of wheels is {GetSummOfWheels()} and summ of doors is {GetSummOfDoors()}";
         }
